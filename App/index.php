@@ -15,6 +15,9 @@ switch ($uriParse) {
     case '/register/form':
         RegisterController::ViewRegisterForm();
         break;
+    case '/register/validation':
+        RegisterController::ValidateRegister();
+        break;
     default:
         LoginController::ViewLoginForm();
         break;

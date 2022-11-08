@@ -1,7 +1,7 @@
 <?php
 
 class LoginModel {
-    public $iduser, $user, $pass;
+    public $id, $user, $pass;
 
     public function validationUserPassModel()
     {
