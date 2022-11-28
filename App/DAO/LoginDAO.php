@@ -19,6 +19,12 @@ class LoginDAO {
 
         if (empty($stmt->fetchObject())) {
             return header("Location: /login/form");
+            session_destroy();
+        } else {
+            echo "SIM";
+            $_SESSION["permissao"] = "S";
+            return header("Location: /usuario");
+            exit;
         }
     }
 }

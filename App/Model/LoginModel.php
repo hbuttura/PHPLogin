@@ -8,6 +8,5 @@ class LoginModel {
         include "./DAO/LoginDAO.php";
         $dao = new LoginDAO();
         $dao->validationUserPass($this);
-    }
-
+    }                                                                      
 }

@@ -25,6 +25,7 @@ class RegisterDAO{
             $stmt->bindValue(2, $model->pass1);
 
             $stmt->execute();
+            return header("Location: /login/form");
         } else {
             return header("Location: /register/form");
         }

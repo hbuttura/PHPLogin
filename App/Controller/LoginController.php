@@ -9,10 +9,14 @@ class LoginController {
     public static function ValidateLogin(){
         include "./Model/LoginModel.php";
         $model = new LoginModel();
-        $user = $model->user = $_POST['user'];
-        $pass = $model->pass = $_POST['pass'];
+        session_start();
+        $_SESSION['user'] = $_POST['user'];
+        $_SESSION['pass'] = $_POST['pass'];
+        $user = $model->user = $_SESSION['user'];
+        $pass = $model->pass = $_SESSION['pass'];
         if (empty($user) || empty($pass)) {
             header('Location: /login/form');
+            session_destroy();
             exit();
         } else {
             $model->validationUserPassModel();
